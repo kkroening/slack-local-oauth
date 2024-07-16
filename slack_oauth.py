@@ -282,9 +282,9 @@ def _main() -> None:
         config = _Config.read()
         if args.force or not config.access_token:
             config.access_token = _SlackOAuthFlow(config).run()
-        print('Access token:', file=sys.stderr)
+            config.write()
+
         print(config.access_token)  # write to stdout independently
-        config.write()
     except _Abort as abort:
         print(abort.message + '\nAbort.', file=sys.stderr)
         sys.exit(1)
