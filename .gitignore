@@ -1,0 +1,4 @@
+/.slack.conf
+/.ssl.crt
+/.ssl.key
+/venv
